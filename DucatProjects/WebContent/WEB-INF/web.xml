@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<!-- ********************************************************************************** -->
+	<!-- ################ SERVLET DEFINITION START ################ -->
+	<servlet>
+		<servlet-name>MarkSheet</servlet-name>
+		<servlet-class>
+			com.prem.ducat.proj.servlets.markssheet.MarkSheet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MarkSheet</servlet-name>
+		<url-pattern>/markssheet/*</url-pattern>
+	</servlet-mapping>
+	<!-- ################ SERVLET DEFINITION END ################ -->
+
+	<!-- ********************************************************************************** -->
+
+	<!-- ################ SERVLET DEFINITION START ################ -->
+	<servlet>
+		<servlet-name>ConfigServlet</servlet-name>
+		<servlet-class>
+			com.prem.ducat.proj.servlets.config.ConfigServlet
+		</servlet-class>
+		<init-param>
+			<param-name>driver</param-name>
+			<param-value>sun.jdbc.odbc.JdbcOdbcDriver</param-value>
+		</init-param>
+		<init-param>
+			<param-name>image</param-name>
+			<param-value>image/new.jpg</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ConfigServlet</servlet-name>
+		<url-pattern>/ConfigServlet</url-pattern>
+	</servlet-mapping>
+	<!-- ################ SERVLET DEFINITION END ################ -->
+
+	<!-- ********************************************************************************** -->
+
+	<!-- ################ SERVLET DEFINITION START ################ -->
+	<servlet>
+		<servlet-name>ListenerServlet</servlet-name>
+		<servlet-class>
+			com.prem.ducat.proj.servlets.cookies.ListenerServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ListenerServlet</servlet-name>
+		<url-pattern>/ListenerServlet</url-pattern>
+	</servlet-mapping>
+	<listener>
+		<listener-class>
+			com.prem.ducat.proj.servlets.cookies.MyListener
+		</listener-class>
+	</listener>
+	<!-- ################ SERVLET DEFINITION END ################ -->
+
+	<!-- ********************************************************************************** -->
+
+	<!-- ################ SERVLET DEFINITION START ################ -->
+	<servlet>
+		<servlet-name>MyFilterServlet</servlet-name>
+		<servlet-class>
+			com.prem.ducat.proj.servlets.filter.MyFilterServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MyFilterServlet</servlet-name>
+		<url-pattern>/MyFilterServlet</url-pattern>
+	</servlet-mapping>
+
+	<filter>
+		<filter-name>MyFilter</filter-name>
+		<filter-class>
+			com.prem.ducat.proj.servlets.filter.MyFilter1
+		</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>MyFilter</filter-name>
+		<url-pattern>/MyFilter</url-pattern>
+	</filter-mapping>
+	<!-- ################ SERVLET DEFINITION END ################ -->
+
+	<!-- ********************************************************************************** -->
+
+	<!-- ################ SERVLET DEFINITION START ################ -->
+
+	<!-- ################ SERVLET DEFINITION END ################ -->
+
+	<!-- ********************************************************************************** -->
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
